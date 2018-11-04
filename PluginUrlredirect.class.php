@@ -7,25 +7,29 @@
   http://livestreetcms.com/profile/PSNet/
 */
 
-if (!class_exists ('Plugin')) {
-  die ('Kokobubble!');
+if (!class_exists('Plugin')) {
+    die ('Kokobubble!');
 }
 
-class PluginUrlredirect extends Plugin {
+class PluginUrlredirect extends Plugin
+{
 
-  public function Activate () {
-    return true;
-  }
-  
-  // ---
-	
-  public function Init () {}
-  
-  // ---
-	
-  protected $aInherits = array (
-    'module' => array ('ModuleText')
-  );
+    protected $aInherits = array(
+        'module' => array('ModuleText')
+    );
+
+    // ---
+
+    public function Activate()
+    {
+        return true;
+    }
+
+    // ---
+
+    public function Init()
+    {
+    }
 
 }
 

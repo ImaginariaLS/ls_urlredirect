@@ -1,5 +1,4 @@
-
-    </div>
-    <!-- /URL Redirect plugin -->
-  </body>
+</div>
+<!-- /URL Redirect plugin -->
+</body>
 </html>

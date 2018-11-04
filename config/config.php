@@ -7,7 +7,7 @@
   http://livestreetcms.com/profile/PSNet/
 */
 
-$config = array ();
+$config = array();
 
 // Открывать ли все ссылки на другие сайты в новом окне
 $config ['Open_All_Foreign_Links_In_New_Window'] = true;
@@ -18,32 +18,32 @@ $config ['Add_Special_Class_For_All_Foreign_Links'] = 'foreignlinks'; // class="
 // Белый список сайтов - позволяет всегда переходить к ним без окна предупреждения.
 // Ссылки прописывать БЕЗ "http://" и последнего слеша, сайты с "www." и без него - разные.
 // Допускается регэкспа в выражениях (выполняется preg_match для ссылки).
-$config ['Always_Trusted_Sites'] = array (
-  '/^(www\.)?google.com$/i',
-  '/^(www\.)?docs.google.com$/i',
-  '/^(www\.)?youtube.com$/i',
-  '/^(www\.)?youtu.be$/i',
-  '/^(www\.)?yandex.ru$/i',
-  '/^(www\.)?livestreet.ru$/i',
-  '/^(www\.)?livestreetcms.com$/i',
-  '/^(.*)(\.)?lookformp3.net$/i',
-  '/^(www\.)?playmp3.org.ua$/i',
-  '/^(www\.)?dropbox.com$/i',
-  '/^(www\.)?kickstarter.com$/i',
-  '/^(www\.)?rpg-world.org$/i',
-  '/^(www\.)?wizards.com$/i',
-  '/^(www\.)?kramaran.ru$/i', 
-  '/^(www\.)?rutracker.org$/i',
-  '/^(www\.)?nntt.org$/i',
-  '/^(www\.)?ru.rpg.wikia.com$/i',
-  '/^(www\.)?scpfoundation.ru$/i',
-  '/^(www\.)?new-age.kingdoms.spb.ru$/i',
-  '/^(.*)$/i',
+$config ['Always_Trusted_Sites'] = array(
+    '/^(www\.)?google.com$/i',
+    '/^(www\.)?docs.google.com$/i',
+    '/^(www\.)?youtube.com$/i',
+    '/^(www\.)?youtu.be$/i',
+    '/^(www\.)?yandex.ru$/i',
+    '/^(www\.)?livestreet.ru$/i',
+    '/^(www\.)?livestreetcms.com$/i',
+    '/^(.*)(\.)?lookformp3.net$/i',
+    '/^(www\.)?playmp3.org.ua$/i',
+    '/^(www\.)?dropbox.com$/i',
+    '/^(www\.)?kickstarter.com$/i',
+    '/^(www\.)?rpg-world.org$/i',
+    '/^(www\.)?wizards.com$/i',
+    '/^(www\.)?kramaran.ru$/i',
+    '/^(www\.)?rutracker.org$/i',
+    '/^(www\.)?nntt.org$/i',
+    '/^(www\.)?ru.rpg.wikia.com$/i',
+    '/^(www\.)?scpfoundation.ru$/i',
+    '/^(www\.)?new-age.kingdoms.spb.ru$/i',
+    '/^(.*)$/i',
 );
 
 // Черный список сайтов - всегда блокировать переход с предупреждением
-$config ['Sites_With_Bad_Reputation'] = array (
-  '/^(www\.)?accessdenied.com$/i',
+$config ['Sites_With_Bad_Reputation'] = array(
+    '/^(www\.)?accessdenied.com$/i',
 );
 
 // Запрещать ли индексацию страницы выхода (в т.ч. и внешних ссылок) для поисковиков, значение мета тега robots.
@@ -82,9 +82,7 @@ $config ['URL_For_Bad_Sites'] = 'dontgo';
 
 // ---
 
-Config::Set ('router.page.' . $config ['URL_For_Good_Sites'], 'PluginUrlredirect_ActionUrlredirect');
-Config::Set ('router.page.' . $config ['URL_For_Bad_Sites'], 'PluginUrlredirect_ActionBadUrlredirect');
+Config::Set('router.page.' . $config ['URL_For_Good_Sites'], 'PluginUrlredirect_ActionUrlredirect');
+Config::Set('router.page.' . $config ['URL_For_Bad_Sites'], 'PluginUrlredirect_ActionBadUrlredirect');
 
 return $config;
-
-?>
