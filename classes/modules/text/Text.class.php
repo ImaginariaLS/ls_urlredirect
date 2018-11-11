@@ -72,8 +72,13 @@ class PluginUrlredirect_ModuleText extends PluginUrlredirect_Inherit_ModuleText
     }
 
     // ---
-
-    public function Parser($sText)
+    /*
+        /engine/modules/text/Text.class.php upgraded from Tabun codebase
+        const ACT_CREATE = 1;
+        const ACT_FIX    = 2;
+        const ACT_UPDATE = 3;
+    */
+    public function Parser($sText, $actionType = -1)
     {
         $sNewResult = parent::Parser($sText);
         $sNewResult = $this->MakeCoolURLs($sNewResult);
