@@ -9,10 +9,23 @@
 
 class PluginUrlredirect_HookUrlredirect extends Hook
 {
+    const ConfigKey = 'urlredirect';
+    const HooksArray = [
+        'init_action'  =>  'AddStylesAndJS',
+    ];
+
 
     public function RegisterHook()
     {
-        $this->AddHook('init_action', 'AddStylesAndJS');
+        $plugin_config_key = $this::ConfigKey;
+        foreach ($this::HooksArray as $hook => $callback) {
+            $this->AddHook(
+                $hook,
+                $callback,
+                __CLASS__,
+                Config::Get("plugin.{$plugin_config_key}.hook_priority.{$hook}") ?? 1
+            );
+        }
     }
 
     // ---
@@ -20,6 +33,7 @@ class PluginUrlredirect_HookUrlredirect extends Hook
     public function AddStylesAndJS()
     {
         if (!Config::Get('plugin.urlredirect.Highlight_External_Links')) return false;
+
         $sTemplateWebPath = Plugin::GetTemplateWebPath(__CLASS__);
         $this->Viewer_AppendStyle($sTemplateWebPath . 'css/style.css');
     }
